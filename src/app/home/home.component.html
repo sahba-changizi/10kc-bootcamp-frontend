@@ -1,0 +1,21 @@
+<div class="container">
+  <header class="jumbotron">
+    <h1 class="display-4">Hello, here are latest photos!</h1>
+    <hr class="my-4">
+    <div class="row">
+      <ng-container *ngFor="let file of userFiles" style="margin-bottom: 24px;">
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <img mime src="{{'data:image/jpg;base64,' + file.imageData}}" class="card-img-top"/>
+            <div class="card-body">
+              <span style="padding-top: 5px">{{file.name}}</span>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Owner: {{file.owner}}</li>
+            </ul>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </header>
+</div>
